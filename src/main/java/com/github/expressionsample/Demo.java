@@ -16,7 +16,6 @@ public class Demo {
      */
     public static void runWithCompiler(DealToStringFunctionCompiler compiler) {
         final DealToStringFunction dealToStringFunction = compiler.compile("(deal.getQuantity() % 10 == 0) ? deal.getTrader() : \"xx\"");
-        
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10000000; i++) {
             final Deal deal = new Deal("deal" + i, "trader" + i, i);
@@ -34,9 +33,8 @@ public class Demo {
      */
     public static void main(final String[] args) {
         
-        
         runWithCompiler(new JavacDealToStringFunctionCompiler());
-        //runWithCompiler(new JaninoEvaluatorDealToStringFunctionCompiler());
+        runWithCompiler(new JaninoEvaluatorDealToStringFunctionCompiler());
     }
     
 
