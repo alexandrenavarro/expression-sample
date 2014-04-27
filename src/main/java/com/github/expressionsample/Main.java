@@ -31,7 +31,7 @@ public class Main {
         for (int i = 0; i < 10000000; i++) {
             final Deal deal = new Deal("deal" + i, "trader" + i, i);
             final String evaluatedExpression = evaluateExpression(expressionEvaluator, deal);
-            // System.out.println("evaluatedExpression=" + evaluatedExpression);
+            System.out.println("evaluatedExpression=" + evaluatedExpression);
         }
         long stop = System.currentTimeMillis();
         System.out.println("time=" + (stop - start));
